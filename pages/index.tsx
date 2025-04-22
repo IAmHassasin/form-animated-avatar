@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
+import AnimatedAvatar from "../form-animated-avatar";
+import { FormGroup } from "@mui/material";
+
 const Page: React.FC = () => {
     const [name, setName] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -10,12 +13,15 @@ const Page: React.FC = () => {
     }, []);
 
     return (
-        <form>
-          <label>
-            Name:
-            <input type="text" value={name} onChange={handleNameChange} />
-          </label>
-          <input type="password" value={password} onChange={handlePasswordChange} />
-        </form>
+      <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <AnimatedAvatar 
+          eyeColor="#3f51b5"
+          messageText="Your password is so WEEEEAAAK!!!"
+          buttonText="Confirm"
+          inputPlaceholder="Insert stronger password"
+        />
+      </div>
       );
 }
+
+export default Page;
